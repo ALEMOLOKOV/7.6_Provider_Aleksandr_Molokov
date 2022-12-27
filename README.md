@@ -27,6 +27,8 @@ resourse - перечислены в файле provider.go, строки с 943
 
 data_source - перечислены в файле provider.go, строки с 419 по 941,  файл расположен в internal\provider\
 
+ссылка - 		DataSourcesMap: map[string]*schema.Resource{
+
 ![1 data source](https://user-images.githubusercontent.com/109212419/209714752-09419d7f-cb47-49d0-ba37-c0e76e7c7463.jpg)
 
 ![2 data source](https://user-images.githubusercontent.com/109212419/209714758-34c2f2e1-1ace-4ac2-9abd-ea8fc64a021f.jpg)
