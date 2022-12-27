@@ -36,4 +36,26 @@ data_source - перечислены в файле provider.go, строки с 
 ![2 data source](https://user-images.githubusercontent.com/109212419/209714758-34c2f2e1-1ace-4ac2-9abd-ea8fc64a021f.jpg)
 
 
+1. Для создания очереди сообщений SQS используется ресурс `aws_sqs_queue` у которого есть параметр `name`. 
+  * С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.
+  
+  Параметр name конфликтует с параметром name_prefix
+  
+  ссылка - https://github.com/hashicorp/terraform-provider-aws/blob/d9290535ae088a600ddec41fe63e899185d74b56/internal/service/sqs/queue.go#L83
+  
+  ![1 1 queue](https://user-images.githubusercontent.com/109212419/209716485-f495cf1c-e98c-4467-86d9-1522528d5fcc.jpg)
 
+
+
+  * Какая максимальная длина имени? 
+
+  Максимальная длинна имени 80 символов, может содержать латинские буквы верхнего и нижнего регистра, цифры, нижнее подчеркивание и дефис
+  
+  ссылка - https://github.com/hashicorp/terraform-provider-aws/blob/d9290535ae088a600ddec41fe63e899185d74b56/internal/service/sqs/queue.go#L430
+  
+  ![1 2 queue](https://user-images.githubusercontent.com/109212419/209718536-310e8f05-3e0a-4d2c-ab88-761b83cadd02.jpg)
+
+  * Какому регулярному выражению должно подчиняться имя?
+  
+  имя должно подчиняться регулярному выражению reqexp
+  
